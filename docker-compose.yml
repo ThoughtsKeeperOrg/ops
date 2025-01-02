@@ -105,6 +105,7 @@ services:
       dockerfile: Dockerfile
     env_file: .env
     command: /text_analyzer
+    restart: always
     depends_on:
       - "kafka-broker"
     # environment: 
@@ -131,7 +132,7 @@ services:
       ME_CONFIG_BASICAUTH: false
 
   neo4j:
-    image: neo4j:5.26.0
+    image: neo4j:5.26.0 
     volumes:
         - /$HOME/neo4j/logs:/logs
         - /$HOME/neo4j/config:/config
