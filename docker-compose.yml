@@ -17,7 +17,6 @@ services:
       - "3009:3009"
   
   ltm:
-    # image: "thoughts_ltm_service:latest"
     build:
       context: ./../long_term_memory
       dockerfile: Dockerfile
@@ -27,12 +26,12 @@ services:
       - KAFKA_CLIENT_ID=ltm_consumer
     ports:
       - "3008:3000"
-    # volumes:
-    #   - ./../volumes:/ltm
     volumes:
       - files-shared:/ltm:rw
     depends_on:
       - db
+      - neo4j
+      - kafka-broker
   
   ltm-consumer:
     build:
@@ -43,8 +42,8 @@ services:
     volumes:
       - ./../volumes:/ltm-consumer
     depends_on:
-      - "kafka-broker"
       - db
+      - kafka-broker
     environment: 
       - KAFKA_SOCKET=kafka-broker:9093
       - KAFKA_CLIENT_ID=ltm_consumer
