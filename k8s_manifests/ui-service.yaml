@@ -14,3 +14,17 @@ spec:
       targetPort: 80
   selector:
     io.kompose.service: ui
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ui-external
+spec:
+  type: LoadBalancer
+  ports:
+    - name: "3009"
+      port: 3009
+      targetPort: 80
+  selector:
+    io.kompose.service: ui

@@ -142,7 +142,7 @@ spec:
                 configMapKeyRef:
                   key: TEXT_ANALYZER_DB_NAME
                   name: env
-          image: ltm-consumer
+          image: thoughts-stack-ltm
           name: ltm-consumer
           volumeMounts:
             - mountPath: /ltm-consumer

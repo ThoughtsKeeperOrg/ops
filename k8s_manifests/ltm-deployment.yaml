@@ -137,7 +137,7 @@ spec:
                 configMapKeyRef:
                   key: TEXT_ANALYZER_DB_NAME
                   name: env
-          image: ltm
+          image: thoughts-stack-ltm
           name: ltm
           ports:
             - containerPort: 3000

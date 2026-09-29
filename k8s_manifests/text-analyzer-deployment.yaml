@@ -135,6 +135,6 @@ spec:
                 configMapKeyRef:
                   key: TEXT_ANALYZER_DB_NAME
                   name: env
-          image: text-analyzer
+          image: thoughts-stack-text_analyzer
           name: text-analyzer
       restartPolicy: Always

@@ -142,7 +142,7 @@ spec:
                 configMapKeyRef:
                   key: TEXT_ANALYZER_DB_NAME
                   name: env
-          image: ocr
+          image: thoughts-stack-ocr
           name: ocr
           volumeMounts:
             - mountPath: /ltm

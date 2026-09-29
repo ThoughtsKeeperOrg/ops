@@ -133,8 +133,8 @@ spec:
                 configMapKeyRef:
                   key: TEXT_ANALYZER_DB_NAME
                   name: env
-          image: ui
           name: ui
+          image: thoughts-stack-ui
           ports:
             - containerPort: 80
               hostPort: 3009

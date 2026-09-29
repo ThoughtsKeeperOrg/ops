@@ -133,7 +133,7 @@ spec:
                 configMapKeyRef:
                   key: TEXT_ANALYZER_DB_NAME
                   name: env
-          image: web-sockets-server
+          image: thoughts-stack-web_sockets_server
           name: web-sockets-server
           ports:
             - containerPort: 4000

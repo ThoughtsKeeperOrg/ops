@@ -14,3 +14,17 @@ spec:
       targetPort: 3000
   selector:
     io.kompose.service: ltm
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ltm-external
+spec:
+  type: LoadBalancer
+  ports:
+    - name: "3008"
+      port: 3008
+      targetPort: 3000
+  selector:
+    io.kompose.service: ltm
