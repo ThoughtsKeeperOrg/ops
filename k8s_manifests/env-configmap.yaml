@@ -1,3 +1,5 @@
+# TODO: extract secrets
+
 apiVersion: v1
 data:
   DB_HOST: db
