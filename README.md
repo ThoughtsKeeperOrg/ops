@@ -1,4 +1,4 @@
-Start app in Kubernetes:
+Start app in Kubernetes (app images local only):
 ```
 kubectl apply -f k8s_manifests/namespace.yaml
 kubectl apply -f k8s_manifests/
