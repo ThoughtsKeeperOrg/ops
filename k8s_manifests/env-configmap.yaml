@@ -11,7 +11,7 @@ data:
   LTM_STORAGE_PATH: /ltm
   MONGODB_URI: mongodb://root:example@mongo:27017/
   NEO4J_DB: neo4j
-  NEO4J_HOST: neo4j
+  NEO4J_HOST: neo4j.thoughts-keeper.svc.cluster.local
   NEO4J_PASSWORD: your_password
   NEO4J_PORT: "7687"
   NEO4J_USER: neo4j

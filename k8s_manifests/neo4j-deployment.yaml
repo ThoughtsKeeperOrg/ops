@@ -28,6 +28,8 @@ spec:
         - env:
             - name: NEO4J_AUTH
               value: neo4j/your_password
+            - name: NEO4J_server_config_strict__validation_enabled
+              value: "false"
           image: neo4j:5.26.0
           name: neo4j
           ports:
