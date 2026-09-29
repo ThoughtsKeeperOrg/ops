@@ -12,9 +12,13 @@ services:
     build:
       context: ./../ui
       dockerfile: Dockerfile
+      args:
+        REACT_APP_BE_API_URL: ${REACT_APP_BE_API_URL}
     env_file: .env
     ports:
-      - "3009:3009"
+      - "3009:80"
+    depends_on:
+      - ltm
   
   ltm:
     build:
@@ -49,14 +53,14 @@ services:
       - KAFKA_CLIENT_ID=ltm_consumer
 
   zookeeper:
-    image: 'bitnami/zookeeper:3.8.4'
+    image: 'bitnamilegacy/zookeeper:3.8.4'
     ports:
       - '2181:2181'
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
 
   kafka-broker:
-    image: 'bitnami/kafka:3.9.0'
+    image: 'bitnamilegacy/kafka:3.9.0'
     user: root
     ports:
       - 9092:9092
