@@ -18,6 +18,4 @@ jobs:
         with:
           files: k8s_manifests
           strict: true
-          kubernetes_version: "1.30.0"
-          ignored_patterns: ""
           output: json
