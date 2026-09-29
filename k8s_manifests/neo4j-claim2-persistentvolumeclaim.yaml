@@ -4,6 +4,7 @@ metadata:
   labels:
     io.kompose.service: neo4j-claim2
   name: neo4j-claim2
+  namespace: thoughts-keeper
 spec:
   accessModes:
     - ReadWriteOnce

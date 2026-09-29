@@ -4,6 +4,7 @@ metadata:
   labels:
     io.kompose.service: files-shared
   name: files-shared
+  namespace: thoughts-keeper
 spec:
   accessModes:
     - ReadWriteOnce

@@ -27,3 +27,4 @@ metadata:
   labels:
     io.kompose.service: db-env
   name: env
+  namespace: thoughts-keeper
