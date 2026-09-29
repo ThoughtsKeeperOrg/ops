@@ -3,7 +3,7 @@ volumes:
   files-shared:
 services:
   db:
-    image: postgres:17.2
+    image: postgres:17.2-alpine
     env_file: .env
     ports:
       - 5432:5432
