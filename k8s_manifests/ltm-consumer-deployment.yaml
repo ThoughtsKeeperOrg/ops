@@ -78,11 +78,6 @@ spec:
                 configMapKeyRef:
                   key: LTM_STORAGE_PATH
                   name: env
-            - name: MONGODB_URI
-              valueFrom:
-                configMapKeyRef:
-                  key: MONGODB_URI
-                  name: env
             - name: NEO4J_DB
               valueFrom:
                 configMapKeyRef:
@@ -128,20 +123,10 @@ spec:
                 configMapKeyRef:
                   key: POSTGRES_USER
                   name: env
-            - name: REACT_APP_BE_API_URL
-              valueFrom:
-                configMapKeyRef:
-                  key: REACT_APP_BE_API_URL
-                  name: env
             - name: SECRET_KEY_BASE
               valueFrom:
                 configMapKeyRef:
                   key: SECRET_KEY_BASE
-                  name: env
-            - name: TEXT_ANALYZER_DB_NAME
-              valueFrom:
-                configMapKeyRef:
-                  key: TEXT_ANALYZER_DB_NAME
                   name: env
           image: thoughts-stack-ltm
           name: ltm-consumer

@@ -5,7 +5,7 @@ data:
   DB_PASSWORD: postgres
   DB_PORT: "5432"
   DB_USERNAME: postgres
-  KAFKA_HOST: kafka-broker
+  KAFKA_HOST: kafka-broker.thoughts-keeper.svc.cluster.local
   KAFKA_PORT: "9093"
   KAFKA_SOCKET: kafka-broker.thoughts-keeper.svc.cluster.local:9093
   LTM_STORAGE_PATH: /ltm
