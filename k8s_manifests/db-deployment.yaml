@@ -10,6 +10,8 @@ metadata:
   namespace: thoughts-keeper
 spec:
   replicas: 1
+  strategy:
+    type: Recreate # Prevents 2 pods from fighting over the same volume during rolling updates
   selector:
     matchLabels:
       io.kompose.service: db
@@ -64,10 +66,32 @@ spec:
                 configMapKeyRef:
                   key: POSTGRES_USER
                   name: env
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
           image: postgres:17.2-alpine
           name: db
           ports:
             - containerPort: 5432
               hostPort: 5432
               protocol: TCP
+          volumeMounts:
+            - name: db-storage
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: db-storage
+          persistentVolumeClaim:
+            claimName: db-pvc
       restartPolicy: Always
+      
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: db-pvc
+  namespace: thoughts-keeper
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
