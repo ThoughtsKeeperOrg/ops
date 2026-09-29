@@ -13,11 +13,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup kubeconform
-        uses: kubeconform/github-action@v1.0.0
+      - name: Validate Kubernetes manifests
+        uses: instrumenta/kubeval-action@master
         with:
-          k8s-version: '1.30.0'
-          schema-location: 'default'
-          manifests: 'k8s_manifests'
-          summary: true
+          files: k8s_manifests
           strict: true
+          kubernetes_version: "1.30.0"
+          ignored_patterns: ""
+          output: json
