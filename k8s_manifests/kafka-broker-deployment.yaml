@@ -27,7 +27,7 @@ spec:
       containers:
         - env:
             - name: KAFKA_ADVERTISED_LISTENERS
-              value: INSIDE://kafka-broker:9093,OUTSIDE://localhost:9092
+              value: INSIDE://kafka-broker.thoughts-keeper.svc.cluster.local:9093,OUTSIDE://kafka-broker.thoughts-keeper.svc.cluster.local:9092
             - name: KAFKA_BROKER_ID
               value: "1"
             - name: KAFKA_INTER_BROKER_LISTENER_NAME

@@ -7,7 +7,7 @@ data:
   DB_USERNAME: postgres
   KAFKA_HOST: kafka-broker
   KAFKA_PORT: "9093"
-  KAFKA_SOCKET: kafka-broker:9093
+  KAFKA_SOCKET: kafka-broker.thoughts-keeper.svc.cluster.local:9093
   LTM_STORAGE_PATH: /ltm
   MONGODB_URI: mongodb://root:example@mongo:27017/
   NEO4J_DB: neo4j
